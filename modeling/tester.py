@@ -94,7 +94,7 @@ L2 = 4
 L3 = 2
 L4 = 3
 L5 = 1.5
-L5_prime = 0.1
+L5_prime = 1
 L6 = 5
 
 
@@ -103,12 +103,12 @@ link2 = Link(pi/2, 0, L2, 0, JointType.REVOLUTE)
 link3 = Link(-pi/2, 0, 0, -pi/2, JointType.REVOLUTE)
 link4 = Link(0, L3+L4, 0, pi/2, JointType.REVOLUTE)
 link5 = Link(-pi/2, 0, L5, -pi/2, JointType.REVOLUTE)
-link6 = Link(pi, 0, L6, 0, JointType.REVOLUTE)
+link6 = Link(pi, L5_prime, L6, 0, JointType.REVOLUTE)
 
 
-T1 = link1.build_T(0)
+T1 = link1.build_T(pi/2)
 T2 = link2.build_T(0)
-T3 = link3.build_T(0)
+T3 = link3.build_T(pi/2)
 T4 = link4.build_T(0)
 T5 = link5.build_T(0)
 T6 = link6.build_T(0)
@@ -138,6 +138,14 @@ T0_6 = T1 @ T2 @ T3 @ T4 @ T5 @ T6
 
 print("p1: {}, p2: {}, p3: {}, p4: {}, p5: {}, p6: {}".format(p1, p2, p3, p4, p5, p6))
 print("T1:\n{}\nT2:\n{}\nT3:\n{}\nT4:\n{}\nT5:\n{}\nT6:\n{}".format(T1, T2, T3, T4, T5, T6))
+
+
+print("T0_1:\n{}".format(T0_1))
+print("T0_2:\n{}".format(T0_2))
+print("T0_3:\n{}".format(T0_3))
+print("T0_4:\n{}".format(T0_4))
+print("T0_5:\n{}".format(T0_5))
+print("T0_6:\n{}".format(T0_6))
 
 points = [p0, p1, p2, p3, p4, p5, p6]
 
@@ -175,7 +183,7 @@ frame6 = o3d.geometry.TriangleMesh.create_coordinate_frame().transform(T0_6)
 
 
 
-if 0:
+if 1:
     pcd = o3d.geometry.PointCloud()
     pcd.points = o3d.utility.Vector3dVector(points)
 
@@ -193,7 +201,7 @@ if 0:
     o3d.visualization.draw_geometries([frame0, frame1, frame2, frame3, frame4, frame5, frame6, pcd, line_set])
 
 
-if 1:
+if 0:
     vis = o3d.visualization.Visualizer()
     vis.create_window()
     vis.add_geometry(frame0)
