@@ -1,0 +1,59 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "platformio-debug",
+      "request": "launch",
+      "name": "PIO Debug",
+      "executable": "C:/Users/Kyle S. Lim/Documents/PlatformIO/Projects/Foundations of Robotics Project/.pio/build/disco_f429zi/firmware.elf",
+      "projectEnvName": "disco_f429zi",
+      "toolchainBinDir": "C:/Users/Kyle S. Lim/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+      "internalConsoleOptions": "openOnSessionStart",
+      "svdPath": "C:/Users/Kyle S. Lim/.platformio/platforms/ststm32/misc/svd/STM32F429x.svd",
+      "preLaunchTask": {
+        "type": "PlatformIO",
+        "task": "Pre-Debug"
+      }
+    },
+    {
+      "type": "platformio-debug",
+      "request": "launch",
+      "name": "PIO Debug (skip Pre-Debug)",
+      "executable": "C:/Users/Kyle S. Lim/Documents/PlatformIO/Projects/Foundations of Robotics Project/.pio/build/disco_f429zi/firmware.elf",
+      "projectEnvName": "disco_f429zi",
+      "toolchainBinDir": "C:/Users/Kyle S. Lim/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+      "internalConsoleOptions": "openOnSessionStart",
+      "svdPath": "C:/Users/Kyle S. Lim/.platformio/platforms/ststm32/misc/svd/STM32F429x.svd"
+    },
+    {
+      "type": "platformio-debug",
+      "request": "launch",
+      "name": "PIO Debug (without uploading)",
+      "executable": "C:/Users/Kyle S. Lim/Documents/PlatformIO/Projects/Foundations of Robotics Project/.pio/build/disco_f429zi/firmware.elf",
+      "projectEnvName": "disco_f429zi",
+      "toolchainBinDir": "C:/Users/Kyle S. Lim/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+      "internalConsoleOptions": "openOnSessionStart",
+      "svdPath": "C:/Users/Kyle S. Lim/.platformio/platforms/ststm32/misc/svd/STM32F429x.svd",
+      "loadMode": "manual"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/Users/Kyle S. Lim/.platformio/packages/toolchain-gdbarmnoneeabi/bin/arm-none-eabi-gcc.exe",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
